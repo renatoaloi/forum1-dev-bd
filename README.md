@@ -88,3 +88,9 @@ FROM tab_campo a
 JOIN tab_campo_tipo b on a.tipo_id = b.id
 WHERE a.posicao = '.js-header-titulo-1';
 ```
+
+## Conclusão
+
+Utilizando essa prática, o frontend pode saber o que renderizar pelo seletor da classe do CSS.
+
+Uma implementação futura seria agregar valores aos campos, os relacionando com relatórios, de forma que cada relatório possa ter o seu próprio campo "Titulo #1" renderizado corretamente.
