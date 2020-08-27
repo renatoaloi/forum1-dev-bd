@@ -40,6 +40,16 @@ Tabela para armazenar os tipos dos campos do relatório
 
 ## Script SQL
 
+### Create database
+
+Criando um banco de dados para esta tarefa do Fórum #1. Eu optei por usar o charset latin1 com o collate padrão dele que é o latin1_swedish_ci por ser o mais preparado para caracteres da língua portuguesa.
+
+```
+CREATE DATABASE if not exists forum1_dev_bd CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+
+USE forum1_dev_bd;
+```
+
 ### Create tables
 
 Tabela de tipos de campo
@@ -56,10 +66,11 @@ Tabela de campos
 ```
 CREATE TABLE tab_campo (
     id int not null auto_increment PRIMARY KEY,
-    tipo_id int not null FOREIGN KEY (tipo_id) REFERENCES tab_campo_tipo(id),
+    tipo_id int not null,
     descricao varchar(255) null,
     tamanho int null,
-    posicao text null
+    posicao text null,
+    CONSTRAINT FOREIGN KEY (tipo_id) REFERENCES tab_campo_tipo(id)
 );
 ```
 
